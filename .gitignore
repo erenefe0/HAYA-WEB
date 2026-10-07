@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.vite/
+*.local
+
+# Local development files
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# Local verification and unrelated CAD work
+/qa/
+/tmp/
+/cad/
+
+# Unselected design draft
+/docs/branding/haya-logo-alpha-draft.png
