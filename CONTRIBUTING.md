@@ -7,12 +7,14 @@ HAYA Web üzerindeki geliştirmeleri küçük, amacı açık değişiklikler hal
 1. Depoyu klonlayın ve `npm ci` ile bağımlılıkları kurun.
 2. Değişikliğinizi `feature/mobil-menu` gibi açıklayıcı bir dalda hazırlayın.
 3. `npm run dev` ile ilgili kullanıcı akışını tarayıcıda inceleyin.
-4. `npm run build` ile TypeScript kontrolünü ve üretim derlemesini doğrulayın.
+4. `npm run format`, `npm run format:check` ve `npm run build` ile biçimi, TypeScript kontrolünü ve üretim derlemesini doğrulayın.
 5. `main` dalına bir pull request açın; problemi, değişikliği ve yaptığınız kontrolleri açıklayın.
 
 ## Kod ve içerik
 
 - Mevcut TypeScript, CSS ve HTML yapısını izleyin. Yeni bağımlılık eklerken neden gerekli olduğunu açıklayın.
+- Modül sorumluluklarını koruyun: içerik `content.ts`, şablon `page.ts`, etkileşimler `interactions.ts`, 3D modeller `models/` altındadır. [Geliştirici rehberi](docs/DEVELOPMENT.md) akışı açıklar.
+- Anlaşılması zor kararları Türkçe yorumlarla açıklayın; yalnızca kodu tekrar eden yorumlar eklemeyin.
 - Form bağlantısını `src/site-config.ts` üzerinden yönetin; aynı adresi farklı yerlere kopyalamayın.
 - Proje, yarışma ve ekip bilgilerini topluluğun doğruladığı kaynaklarla güncelleyin.
 - ESTÜ logosunun oranlarını ve renklerini koruyun. Marka kaynakları `docs/branding/` içindedir.
