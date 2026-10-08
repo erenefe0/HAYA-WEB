@@ -24,14 +24,41 @@ Bağlantıyı değiştirdikten sonra `npm run build` çalıştırın. Yayımlanm
 
 | İçerik | Düzenlenecek dosya |
 | --- | --- |
-| Araştırma alanları ve ayrıntıları | `src/main.ts` → `areas` |
-| 2209-A, 2209-B, LİFT-UP ve 2242 projeleri | `src/main.ts` → `projects` |
-| TEKNOFEST, topluluk ve iletişim metinleri | `src/main.ts` → ilgili HTML bölümü |
+| Araştırma alanları ve ayrıntıları | `src/content.ts` → `areas` |
+| 2209-A, 2209-B, LİFT-UP ve 2242 projeleri | `src/content.ts` → `projects` |
+| TEKNOFEST, topluluk ve iletişim metinleri | `src/page.ts` → ilgili HTML bölümü |
 | Başlık ve arama motoru açıklaması | `index.html` |
 | Renkler, yazı boyutları ve ekran kırılımları | `src/style.css` |
-| 3D modeller, materyaller ve kamera | `src/scene.ts` |
+| 3D modeller, materyaller ve kamera | `src/models/` ve `src/scene.ts` |
 
 Sayfa bölümlerinin kimlikleri: `hakkimizda`, `arastirmalar`, `projeler`, `topluluk`, `katil`, `iletisim`. Bölüm kimliğini değiştirdiğinizde menü ve içerik bağlantılarını birlikte güncelleyin.
+
+### Araştırma kartı eklemek
+
+`src/content.ts` içindeki `areas` listesine aynı yapıda bir kayıt ekleyin:
+
+```ts
+{
+  no: '04',                         // Benzersiz kart ve pencere kimliği.
+  icon: 'cpu',                      // Lucide ikon adı.
+  title: 'Yeni araştırma alanı',     // Kart ve pencere başlığı.
+  text: 'Kartta görünen kısa özet.',
+  tags: ['Konu', 'Yöntem'],          // Kısa etiketler.
+  detail: 'Ayrıntı penceresinde görünen açıklama.',
+}
+```
+
+Şablon ve ayrıntı penceresi bu listeyi birlikte kullanır. Yeni ikon kullanırsanız `interactions.ts` içindeki Lucide importunu ve `refreshIcons()` haritasını da güncelleyin. Kart sayısı arttığında mobil ve masaüstü yerleşimlerini kontrol edin.
+
+### Proje kartı eklemek
+
+`projects` kayıtlarında `code` program kodu, `group` çalışma grubu, `icon` ikon adı, `title` başlık, `text` açıklama, `tags` etiketler ve `className` CSS görünümüdür. Başlıktaki `<br>` satır kırılımı sağlar. `className` için var olan proje sınıflarından uygun olanı seçin veya `style.css` içinde yeni bir görünüm tanımlayın.
+
+TEKNOFEST tanıtımı ayrı bir bölüm olduğundan `projects` listesine bağlı değildir; `page.ts` içindeki `.tracking-project` bölümünü düzenleyin. Danışman, sorumlu ve adres bilgileri aynı dosyadaki `#iletisim` bölümündedir. İçerikleri güncellerken topluluğun onayladığı bilgileri kullanın.
+
+### Metin güvenliği
+
+Bu veriler geliştirici tarafından depoda düzenlenen içeriktir ve HTML şablonuna yerleştirilir. Kullanıcının yazdığı veya uzak bir kaynaktan alınan metinleri doğrudan bu alanlara bağlamayın. Böyle bir entegrasyon için metinleri `textContent` ile yazmak veya HTML temizleme katmanı eklemek gerekir.
 
 ## Logolar ve yazı tipleri
 

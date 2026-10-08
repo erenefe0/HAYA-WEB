@@ -57,6 +57,8 @@ Geliştirme adresi: [http://127.0.0.1:5173](http://127.0.0.1:5173). Port kullan�
 | `npm ci` | Kilit dosyasındaki bağımlılıkları kurar. |
 | `npm run dev` | Yerel geliştirme sunucusunu başlatır. |
 | `npm run build` | TypeScript kontrolünü çalıştırır ve `dist/` çıktısını üretir. |
+| `npm run format` | Kaynak kodunu tutarlı biçimde düzenler. |
+| `npm run format:check` | Kod biçimini değişiklik yapmadan denetler. |
 | `npm run preview` | Derlenmiş siteyi yerelde önizler. |
 
 ## Google Forms katılım bağlantısı
@@ -83,8 +85,14 @@ HAYA-WEB/
 │   └── screenshots/      # Masaüstü ve mobil önizlemeler
 ├── public/               # Site logoları ve favicon
 ├── src/
-│   ├── main.ts           # İçerik, gezinme ve etkileşimler
-│   ├── scene.ts          # 3D modeller ve sahne yaşam döngüsü
+│   ├── main.ts           # Uygulamayı başlatır
+│   ├── content.ts        # Araştırma ve proje verileri
+│   ├── page.ts           # Sayfa HTML şablonu
+│   ├── ui.ts             # Ortak HTML ve katılım yardımcıları
+│   ├── interactions.ts   # Menü, pencereler ve hareket tercihi
+│   ├── flight-story.ts   # Kaydırma ve sahne seçimi
+│   ├── models/           # Drone, kumandalar ve ortak 3D yardımcıları
+│   ├── scene.ts          # Kamera, çizim ve sahne yaşam döngüsü
 │   ├── site-config.ts    # Google Forms bağlantısı
 │   └── style.css         # Tasarım ve responsive yerleşim
 ├── index.html
@@ -101,6 +109,15 @@ HAYA-WEB/
 
 ## Geliştirme ve yayınlama
 
+Başlangıç noktası `src/main.ts` dosyasıdır. Kart metinleri `src/content.ts`, sayfa bölümleri `src/page.ts`, etkileşimler `src/interactions.ts` içindedir. Kaydırma ve 3D model kodları ayrı modüllerdedir; kaynaklarda Türkçe açıklamalar bulunur.
+
+| Rehber | İçerik |
+| --- | --- |
+| [Geliştirici rehberi](docs/DEVELOPMENT.md) | Modül mimarisi, başlatma sırası, kaydırma hesabı, 3D koordinatlar, kaynak temizliği, test senaryoları, sorun giderme ve Git akışı. |
+| [Yapılandırma](docs/CONFIGURATION.md) | Google Forms, kartlar, tanıtım metinleri ve görseller. |
+| [Katkı rehberi](CONTRIBUTING.md) | Dal, PR, kod biçimi ve kontrol beklentileri. |
+| [Varlık rehberi](docs/ASSETS.md) | Logo, poster ve marka kaynakları. |
+
 Geliştirme akışı, 3D sahnenin davranışı ve manuel kontroller [geliştirici rehberinde](docs/DEVELOPMENT.md) açıklanır. Değişiklik önerileri için [katkı rehberini](CONTRIBUTING.md) kullanın.
 
 `npm run build` sonrası oluşan `dist/` klasörü statik bir sunucuda yayımlanabilir. Varsayılan varlık yolları alan adının kök dizini için hazırlanmıştır. GitHub Pages gibi `/HAYA-WEB/` alt yolunda yayınlama için Vite `base` ayarı ve kökten başlayan görsel yolları birlikte düzenlenmelidir. Ayrıntılar [yayınlama notlarında](docs/DEVELOPMENT.md#yayınlama) bulunur.
@@ -112,3 +129,10 @@ Proje kodları, ekip ve iletişim bilgileri HAYA'nın güncel tanıtım posterin
 ESTÜ'nün resmî logoları üniversitenin kullanım kılavuzundan alınmış ve özgün renkleriyle korunmuştur. HAYA logosu ayrı bir topluluk kimliğidir. Kaynaklar ve görsellerin kullanımı [varlık rehberinde](docs/ASSETS.md) listelenir.
 
 Bu depo için bir açık kaynak lisansı henüz belirlenmemiştir.
+
+## Mevcut sınırlar
+
+- Google Forms bağlantısı henüz doldurulmamıştır; başvurular bağlantı eklendiğinde açılır.
+- 3D modeller tanıtım amaçlıdır; gerçek uçuş kontrolü veya uçuş simülasyonu bu web sitesinde çalıştırılmaz.
+- Otomatik uçtan uca test paketi ve depo içi yayınlama workflow'u yoktur. Derleme ve biçim kontrolüne tarayıcı kontrolleri eşlik eder.
+- WebGL kullanılamadığında alternatif görünüm gösterilir. Yazı tipleri Google Fonts üzerinden yüklenir.
