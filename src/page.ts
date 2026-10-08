@@ -75,7 +75,7 @@ export function renderPage() {
           <div class="flight-visual">
             <div class="scene-orbit" aria-hidden="true"></div>
             <div class="scene-topline">
-              <span>HAYA / ARAŞTIRMA ATÖLYESİ</span
+              <span>HAYA / ARAŞTIRMA ATÖLYESİ</span>
             </div>
             <div
               id="flight-canvas"

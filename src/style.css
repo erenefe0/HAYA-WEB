@@ -454,17 +454,6 @@ em {
   z-index: 2;
   pointer-events: none;
 }
-.scene-live {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.scene-live i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #4fa27a;
-}
 .scene-caption {
   position: absolute;
   left: 14%;
@@ -1532,9 +1521,6 @@ em {
   .hero-copy-second p {
     max-width: 350px;
   }
-  .scene-topline .scene-live {
-    display: none;
-  }
   .scene-caption {
     left: 8%;
     right: 10%;
@@ -2017,10 +2003,6 @@ em {
     right: var(--gutter);
     font-size: 6px;
     letter-spacing: 1px;
-  }
-  .scene-topline .scene-live {
-    display: flex;
-    font-size: 6px;
   }
   .scene-caption {
     left: var(--gutter);
