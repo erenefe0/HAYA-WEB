@@ -17,7 +17,7 @@ Yeni HAYA logosunda özgün dört renkli drone kimliği korunmuştur. Üretim ka
 
 ## Eskişehir Teknik Üniversitesi
 
-Yatay ve dairesel ESTÜ logoları üniversitenin [resmî logo kullanım kılavuzundan](https://www.eskisehir.edu.tr/Uploads/www/files/ESTU%CC%88%20LOGO%20KULLANIM%20KLAVUZU.pdf) alınmıştır. Çizimler, renkler ve en-boy oranları değiştirilmemiştir.
+`public/estu-logo-horizontal.svg` ve `public/estu-logo-circular.svg` dosyalarındaki yatay ve dairesel ESTÜ logoları üniversitenin [resmî logo kullanım kılavuzundan](https://www.eskisehir.edu.tr/Uploads/www/files/ESTU%CC%88%20LOGO%20KULLANIM%20KLAVUZU.pdf) alınmıştır. Çizimler, renkler ve en-boy oranları değiştirilmemiştir.
 
 Çıkarım ve kullanım bilgileri [ESTÜ marka kaynağı notlarında](branding/README.md), kılavuzun kopyası `docs/branding/estu-logo-kullanim-kilavuzu.pdf` dosyasında bulunur. HAYA kimliği, üniversitenin resmî logosundan ayrı kullanılır.
 
