@@ -181,7 +181,8 @@ em {
   align-items: center;
 }
 .university-identity picture {
-  background: #fff;
+  /* SVG şeffaftır; logo çevresinde ayrı bir beyaz kutu oluşturma. */
+  background: transparent;
   border-radius: 3px;
   display: block;
   padding: 3px 6px;
@@ -1239,7 +1240,8 @@ em {
 }
 .university-footer {
   margin-left: auto;
-  background: white;
+  /* Altbilginin kendi zeminini göster; logonun özgün renklerini koru. */
+  background: transparent;
   border-radius: 3px;
   padding: 6px 10px;
 }
